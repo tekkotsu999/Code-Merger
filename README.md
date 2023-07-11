@@ -14,6 +14,7 @@ When you run the program, the contents of all .js, .html, and .py files in the s
 
 1. Install Python. This project has been tested on Python 3.8 and above.
 2. Install the necessary libraries. Use the following command: `pip install pyperclip`
+<br>
 
 1. Pythonをインストールします。このプロジェクトはPython 3.8以上でテストされています。
 2. 必要なライブラリをインストールします。次のコマンドを使用してください: `pip install pyperclip`
