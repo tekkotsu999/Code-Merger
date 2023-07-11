@@ -25,7 +25,7 @@ This script can be run from the command line. Run it as follows:
 このスクリプトはコマンドラインから実行できます。以下のように実行してください:
 
 ```bash
-python main.py
+python merge.py
 ```
 When you run the above command, the script scans .js, .html, and .py files in the current directory and combines their content to create a new markdown file. This file is named with the current timestamp.
 
