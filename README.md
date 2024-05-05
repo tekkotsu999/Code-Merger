@@ -1,39 +1,28 @@
-# Code Merger
+# Code Merger Script
 
-This program is a Python script that reads all .js, .html, and .py files in the same directory and combines their content into a single markdown format string. This result is written to a new markdown file and is also copied to the clipboard.
+このスクリプトは、特定の拡張子を持つファイル群をカレントディレクトリから読み込み、その内容を一つのMarkdownファイルにマージするツールです。マージされたファイルは、指定されたフォルダ内にタイムスタンプ付きで保存されます。
 
-このプログラムは、同じディレクトリにある全ての.js、.html、.pyファイルを読み込み、その内容を一つのマークダウン形式の文字列にまとめるPythonスクリプトです。この結果は、新たなマークダウンファイルに書き込まれ、同時にクリップボードにもコピーされます。
+## 機能
 
-## Usage | 使い方
+- 複数のファイルタイプ（現在は `.js`, `.html`, `.py`）の内容を一つのマークダウンファイルにマージ。
+- 特定のファイルをマージ対象から除外。
+- マージ結果を新たに作成されるフォルダに保存。
+- マージした内容をクリップボードにコピー。
 
-When you run the program, the contents of all .js, .html, and .py files in the same directory are combined, and a new markdown file is created. The name of the generated file will be the current timestamp ('YYYYMMDDHHMMSS_merged_code.md').
+## 使い方
 
-プログラムを実行すると、同じディレクトリにある全ての.js、.html、.pyファイルの内容が結合され、新しいマークダウンファイルが生成されます。生成されるファイルの名前は現在のタイムスタンプ（'YYYYMMDDHHMMSS_merged_code.md'）となります。
+1. スクリプトと同じディレクトリに必要なファイルを配置します。
+2. 除外したいファイル名を `exclude_files` リストに追加します。
+3. `extensions` リストにマージしたいファイルの拡張子を指定します。
+4. スクリプトを実行すると、指定された拡張子のファイルがマージされ、`merged_codes` ディレクトリに保存されます。
 
-## Installation | インストール方法
+## .gitignore 設定
 
-1. Install Python. This project has been tested on Python 3.8 and above.
-2. Install the necessary libraries. Use the following command: `pip install pyperclip`
-<br>
+リポジトリに以下の項目を追加して、特定のファイルやディレクトリがGitに追跡されないようにしてください:
 
-1. Pythonをインストールします。このプロジェクトはPython 3.8以上でテストされています。
-2. 必要なライブラリをインストールします。次のコマンドを使用してください: `pip install pyperclip`
-
-## Execution | 実行方法
-
-This script can be run from the command line. Run it as follows:
-
-このスクリプトはコマンドラインから実行できます。以下のように実行してください:
-
-```bash
-python merge.py
 ```
-When you run the above command, the script scans .js, .html, and .py files in the current directory and combines their content to create a new markdown file. This file is named with the current timestamp.
+code_merger.py
+merged_codes
+```
 
-上記コマンドを実行すると、スクリプトは現在のディレクトリにある.js、.html、.pyファイルをスキャンし、その内容を結合して新しいマークダウンファイルを作成します。このファイルは、現在のタイムスタンプで名付けられます。
-
-## Note | 注意事項
-
-This script reads all existing .js, .html, and .py files. If there are a large number of files in the directory, the script execution time may be long. Also, the generated markdown file may become very large.
-
-このスクリプトは、存在する全ての.js、.html、.pyファイルを読み込みます。ディレクトリ内に大量のファイルが存在する場合、スクリプトの実行時間が長くなる可能性があります。また、生成されるマークダウンファイルも非常に大きくなる可能性があります。
+この設定により、マージスクリプト自体とその出力結果がGitリポジトリに含まれないようになります。
